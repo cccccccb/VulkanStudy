@@ -4,6 +4,7 @@ file(GLOB SRC_FILES *.cpp)
 
 find_package(glfw3 REQUIRED)
 find_package(PkgConfig REQUIRED)
+
 pkg_search_module(GL REQUIRED gl)
 pkg_search_module(VULKAN REQUIRED vulkan)
 
