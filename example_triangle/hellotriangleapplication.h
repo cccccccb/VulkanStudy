@@ -28,11 +28,23 @@ private:
     void mainLoop();
     void cleanup();
 
+    void drawFrame();
+
     void createInstance();
     void createLogicalDevice();
     void createSurface();
     void createSwapChain();
     void createImageView();
+
+    void createGraphicsPipeline();
+    VkShaderModule createShaderModule(const std::vector<char> &code);
+    void createRenderPass();
+    void createFramebuffers();
+    void createCommandPool();
+    void createCommandBuffer();
+    void createSyncObjecs();
+
+    void recordCommandBuffer(VkCommandBuffer commandBuffer, uint32_t imageIndex);
 
     void pickPhysicalDevice();
     void checkExtensionProperties();
@@ -59,4 +71,13 @@ private:
     VkFormat swapChainImageFormat;
     VkExtent2D swapChainExtent;
     std::vector<VkImageView> swapChainImageViews;
+    VkRenderPass renderPass;
+    VkPipelineLayout pipelineLayout;
+    VkPipeline graphicsPipeline;
+    std::vector<VkFramebuffer> swapChainFramebuffers;
+    VkCommandPool commandPool;
+    VkCommandBuffer commandBuffer;
+    VkSemaphore imageAvailableSemaphore;
+    VkSemaphore renderFinishedSemaphore;
+    VkFence inFlightFence;
 };
