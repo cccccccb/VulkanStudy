@@ -1,4 +1,4 @@
-set(APP_NAME "triangle")
+set(APP_NAME "rectangle")
 
 file(GLOB SRC_FILES *.cpp)
 

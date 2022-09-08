@@ -9,4 +9,6 @@ include(GNUInstallDirs)
 include(FindPkgConfig)
 
 add_subdirectory(example_setup)
+add_subdirectory(example_opengl)
 add_subdirectory(example_triangle)
+add_subdirectory(example_rectangle)
